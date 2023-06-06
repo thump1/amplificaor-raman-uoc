@@ -1,0 +1,17 @@
+<amplificador-raman xmlns="urn:amplificador-raman">
+  <amplificador-raman>
+    <potencia-bombeo>500</potencia-bombeo>
+    <longitud-onda-bombeo>1450</longitud-onda-bombeo>
+    <longitud-onda-senal>1550</longitud-onda-senal>
+    <ganancia>20</ganancia>
+  </amplificador-raman>
+</amplificador-raman>
+
+{
+    "amplificador-raman": {
+        "potencia-bombeo": 500,
+        "longitud-onda-bombeo": 1450.0,
+        "longitud-onda-senal": 1550.0,
+        "ganancia": 20
+    }
+}

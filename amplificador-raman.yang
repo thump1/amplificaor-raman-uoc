@@ -1,0 +1,54 @@
+module amplificador-raman {
+    namespace "urn:amplificador-raman";
+    prefix "uoc-raman";
+    organization "Universitat Oberta de Catalunya.";
+    contact "usuario@uoc.edu";
+    description "Implementa las entidades de un amplificador Raman.";
+    revision 2023-05-13 {
+        description "Primera version.";
+    }
+
+    typedef potencia {
+        type uint32;
+        units "mW";
+        description "Potencia de bombeo en miliwatts.";
+    }
+
+    typedef longitud-onda {
+        type decimal64 {
+            fraction-digits 2;
+            range "1260.00 .. 1675.00"; // Rango de longitudes de onda de fibra óptica en nm
+        }
+        units "nm";
+        description "Longitud de onda en nanometros.";
+    }
+
+    typedef ganancia {
+        type uint32;
+        units "dB";
+        description "Ganancia en decibelios.";
+    }
+
+    container amplificador-raman {
+        leaf potencia-bombeo {
+            type potencia;
+            description "Potencia de bombeo del amplificador Raman";
+            mandatory true;
+        }
+        leaf longitud-onda-bombeo {
+            type longitud-onda;
+            description "Longitud de onda de bombeo del amplificador Raman";
+            mandatory true;
+        }
+        leaf longitud-onda-senal {
+            type longitud-onda;
+            description "Longitud de onda de señal del amplificador Raman";
+            mandatory true;
+        }
+        leaf ganancia {
+            type ganancia;
+            description "Ganancia del amplificador Raman";
+            mandatory true;
+        }
+    }
+}
